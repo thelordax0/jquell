@@ -56,16 +56,16 @@ public class Util {
         try {
 
 
-            // HttpURLConnection oluşturun
+            
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-            // GET isteği yapın
+        
             connection.setRequestMethod("GET");
 
-            // Yanıtın başlıklarını alın
+          
             Map<String, List<String>> headers = connection.getHeaderFields();
 
-            // Başlıkları ekrana yazdırın
+           
             System.out.println("HTTP Response Headers:");
             for (Map.Entry<String, List<String>> entry : headers.entrySet()) {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
@@ -74,39 +74,39 @@ public class Util {
 
 
 
-            // Bağlantıyı kapatın
+          
             connection.disconnect();
 
 
 
             InetAddress inetAddress = InetAddress.getByName(url.getHost());
 
-            // Sunucunun IP adresini al
+           
             System.out.println("IP: " + inetAddress.getHostAddress());
 
 
-            // Protokol (http, https, ftp, vb.)
+          
             System.out.println("Protocol: " + url.getProtocol());
 
-            // Host adı
+
             System.out.println("Host: " + url.getHost());
 
-            // Port numarası
+           
             System.out.println("Port: " + url.getPort());
 
-            // Yol (path)
+            
             System.out.println("Path: " + url.getPath());
 
-            // Sorgu parametreleri
+          
             System.out.println("Query: " + url.getQuery());
 
-            // Fragment (sayfanın içindeki bir konum)
+            
             System.out.println("Fragment: " + url.getRef());
 
-            // Dosya (URL'nin sonundaki dosya adı)
+        
             System.out.println("File: " + url.getFile());
 
-            // UserInfo (kullanıcı adı ve şifre)
+          
             System.out.println("User Info: " + url.getUserInfo());
         } catch (Exception e) {
             System.err.println(ansi().fgBrightRed().a("Error:Invalid URL!").reset());
